@@ -1,9 +1,0 @@
-{
-	"cursos":
-		[
-			{"codigo":"1","descricao":"Java", "diashorarios":"segundas 19 horas", "professor":"Albertin"},
-			{"codigo":"1","descricao":"Delphi", "diashorarios":"tercas 19 horas", "professor":"Carlin"},
-			{"codigo":"1","descricao":"Java EE", "diashorarios":"quartas 19 horas", "professor":"Robertin"},
-			{"codigo":"1","descricao":"Arduino", "diashorarios":"quintas 19 horas", "professor":"Paulin"}
-		]
-}
