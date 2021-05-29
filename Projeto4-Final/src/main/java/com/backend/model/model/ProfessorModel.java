@@ -1,14 +1,17 @@
 package com.backend.model.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 @Entity
@@ -31,6 +34,9 @@ public class ProfessorModel implements Serializable {
 	@Column(name="prof_celular", length=15, nullable=false)
 	private String celular;
 	
+	@OneToMany(mappedBy="professorModel")
+	private List<CursoModel> cursoModel;
+	
 	public ProfessorModel() {
 	}
 	
@@ -39,6 +45,11 @@ public class ProfessorModel implements Serializable {
 		this.nome = nome;
 		this.email = email;
 		this.celular = celular;
+	}
+	
+	@XmlTransient
+	public List<CursoModel> getCursos() {
+		return cursoModel;
 	}
 
 	public Integer getCodigo() {

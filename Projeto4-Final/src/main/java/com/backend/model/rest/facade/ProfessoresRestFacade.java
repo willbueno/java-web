@@ -19,7 +19,7 @@ import com.backend.model.model.service.ProfessorServiceInterface;
 @Path("/professores")
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 @Consumes(MediaType.APPLICATION_JSON)
-public class ProfessoresFacade {
+public class ProfessoresRestFacade {
 	
 	/* Sem o uso de servicos
 	@Inject

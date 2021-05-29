@@ -2,8 +2,8 @@ var cursosModulo = angular.module('cursosModulo', []);
 
 cursosModulo.controller("cursosController", function ($scope, $http) {
 	
-	urlProfessores = 'http://localhost:8080/Projeto2HttpJaxRS/rest/professores';
-	urlCursos = 'http://localhost:8080/Projeto2HttpJaxRS/rest/cursos';
+	urlProfessores = 'http://localhost:8080/Projeto4-Final/rest/professores';
+	urlCursos = 'http://localhost:8080/Projeto4-Final/rest/cursos';
 	
 	$scope.listarProfessores = function() {
 		$http.get(urlProfessores).then(successCallback, errorCallback);
@@ -40,17 +40,17 @@ cursosModulo.controller("cursosController", function ($scope, $http) {
 	}
 	
 	$scope.salvar = function() {
-		alert("codigo: " + $scope.curso.codigo);
-		console.log("codigo: " + $scope.curso.codigo);
+		//alert("codigo: " + $scope.curso.codigo);
+		//console.log("codigo: " + $scope.curso.codigo);
 		
 		if ($scope.curso.codigo == undefined) {
-			console.log("POST - codigo vazio = novo registro");
-			alert("POST - codigo vazio = novo registro");
+			//alert("POST - codigo vazio = novo registro");
+			//console.log("POST - codigo vazio = novo registro");
 			$http.post(urlCursos, $scope.curso).then(successCallback, errorCallback);
 				
 			function successCallback() {
-				$scope.cursos.push($scope.curso);
 				$scope.limparCampos();
+				$scope.listarCursos();
 			}
 			
 			function errorCallback(error) {
@@ -59,8 +59,8 @@ cursosModulo.controller("cursosController", function ($scope, $http) {
 		
 		}
 		else {
-			console.log("PUT - codigo nao vazio = altera registro");
-			alert("PUT - codigo nao vazio = altera registro");
+			//console.log("PUT - codigo nao vazio = altera registro");
+			//alert("PUT - codigo nao vazio = altera registro");
 			$http.put(urlCursos, $scope.curso).then(successCallback, errorCallback);
 			
 			function successCallback() {

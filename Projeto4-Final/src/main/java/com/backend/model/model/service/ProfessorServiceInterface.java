@@ -6,7 +6,7 @@ import com.backend.model.model.ProfessorModel;
 
 public interface ProfessorServiceInterface {
 	
-public ProfessorModel salvarProfessor(ProfessorModel professorModel);
+	public ProfessorModel salvarProfessor(ProfessorModel professorModel);
 	
 	public void alterar(ProfessorModel professorModel);
 	
